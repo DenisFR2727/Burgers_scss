@@ -1,0 +1,141 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1024px;
+}
+.container .menu {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  width: 1024px;
+  background-color: black;
+  padding: 0 50px;
+}
+.container .menu h3 {
+  color: white;
+}
+.container .menu .nav_desktop-menu ul {
+  display: flex;
+  gap: 10px;
+}
+.container .menu .nav_desktop-menu ul li {
+  list-style: none;
+}
+.container .menu .nav_desktop-menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+}
+.container .menu #check {
+  display: none;
+}
+.container .menu .nav_mobile-menu {
+  position: absolute;
+  z-index: 1;
+  top: 120px;
+  left: 0;
+  width: 300px;
+  background-color: rgb(212, 22, 22);
+  padding: 10px;
+  animation: mobile-menu;
+  opacity: 0; /* Початкова прозорість */
+  transform: translateY(-40px); /* Зміщення вгору */
+  pointer-events: none; /* Щоб уникнути взаємодії, коли меню приховане */
+  transition: opacity 1s ease, transform 1s ease;
+}
+.container .menu .nav_mobile-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.container .menu .nav_mobile-menu ul li {
+  list-style: none;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slide-down 0.5s forwards;
+  padding: 8px;
+}
+.container .menu .nav_mobile-menu ul li:hover {
+  background-color: blue;
+  width: 90%;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, border-radius 0.3s ease;
+}
+.container .menu .nav_mobile-menu ul li a {
+  color: aliceblue;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.container .menu .nav_mobile-menu ul li a:hover {
+  transform: scale(1.15) !important;
+}
+.container .menu .nav_mobile-menu ul li:nth-child(1) {
+  animation-delay: 0.4s;
+}
+.container .menu .nav_mobile-menu ul li:nth-child(2) {
+  animation-delay: 0.8s;
+}
+.container .menu .nav_mobile-menu ul li:nth-child(3) {
+  animation-delay: 1.2s;
+}
+.container .menu .nav_mobile-menu ul li:nth-child(4) {
+  animation-delay: 1.6s;
+}
+.container .menu .nav_mobile-menu ul li:nth-child(5) {
+  animation-delay: 2s;
+}
+.container .menu .nav_mobile-menu ul li:nth-child(6) {
+  animation-delay: 2.4s;
+}
+.container .menu .nav_mobile-menu ul li:nth-child(7) {
+  animation-delay: 2.8s;
+}
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.container .menu .checkbtn {
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+.container .menu #check:checked ~ .nav_mobile-menu {
+  opacity: 1; /* Робимо меню видимим */
+  transform: translateY(0); /* Повертаємо до початкової позиції */
+  pointer-events: all;
+}
+.container .menu .burger_menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: aliceblue;
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+}
+.container .menu .burger_menu .item {
+  width: 50px;
+  height: 10px;
+  background-color: red;
+}
+
+/*# sourceMappingURL=style.css.map */
